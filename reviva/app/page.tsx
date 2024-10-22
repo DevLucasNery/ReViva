@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 export default function Home() {
   return (
     <main className="text-branco flex flex-col bg-branco min-h-screen min-w-screen">
@@ -22,4 +21,4 @@ export default function Home() {
     </main>
   );
 }
->>>>>>> 8f7bd94edc6e4b603ef694fedd50afcd7260b65b
+
