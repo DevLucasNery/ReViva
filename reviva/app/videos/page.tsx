@@ -1,63 +1,78 @@
+'use client'
+import { useState } from "react";
+import Video from "../components/video";
+
+interface Video {
+    titulo: string
+    descricao: string
+    youtubeId: string
+}
+
+const listaVideos: Video[] = [
+    { titulo: 'Como reciclar', descricao: 'Aprenda a reciclar do zero', youtubeId: '3AfaTM8fB_E' },
+    { titulo: 'Reciclagem: mito ou realidade?', descricao: 'Desvende verdades sobre reciclagem com Thomas Turbando', youtubeId: 'OuG7WKSrwCQ' },
+    { titulo: 'A vida sem lixo', descricao: 'Vida ≠ Lixo', youtubeId: 'vm49-iA7Y5Y' }
+];
+
 export default function Videos() {
+    const [videoSelecionado, setVideoSelecionado] = useState<Video | null>(null);
     return (
-        <main className="text-branco flex flex-col bg-branco min-h-screen min-w-screen">
-            <header className="flex p-8 text-2xl bold bg-verde_escuro">
-                <div>
-                    <span>Reviva</span>
-                </div>
-            </header>
+        <section className="flex flex-col bg-branco text-verde_escuro flex-grow p-8 justify-center items-center">
+            <h1 className="text-4xl font-semibold mb-6 text-center">
+                Aprenda mais sobre como separar seus resíduos para o descarte
+            </h1>
+            <p className="text-xl mb-8 text-center">
+                A reciclagem é fundamental para preservar o meio ambiente. Assista aos vídeos abaixo e descubra
+                as melhores práticas para separar seus resíduos corretamente!
+            </p>
 
-            <section className="flex flex-col bg-verde_claro text-black flex-grow p-8 justify-center items-center">
-                <h1 className="text-2xl font-semibold mb-6 text-center">
-                    Aprenda mais sobre como separar seus resíduos para o descarte
-                </h1>
-                <p className="text-lg mb-8 text-center">
-                    A reciclagem é fundamental para preservar o meio ambiente. Assista aos vídeos abaixo e descubra
-                    as melhores práticas para separar seus resíduos corretamente!
-                </p>
-
-                <span className="text-xl font-semibold">
-                    COmo rebolar lentinho pros crias
-                </span>
-
-                <div className="flex bg-branco w-1/2 h-[25rem] flex-grow justify-center items-center shadow-lg rounded-lg mb-8">
-                    <div className="flex w-[10rem] h-[10rem] rounded-full bg-[url('/play-button.png')] bg-cover bg-center cursor-pointer"></div>
-                </div>
-
-
-                <span className="text-xl font-semibold">
-                    Veja mais vídeos
-                </span>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
-                    <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
-                        <div className="w-full h-[10rem] bg-[url('/video-thumbnail1.jpg')] bg-cover bg-center mb-4"></div>
-                        <h2 className="text-xl font-semibold">Como separar plástico e vidro</h2>
-                        <p className="text-gray-700 text-sm mt-2">
-                            Aprenda a diferença e a importância de separar esses materiais para a reciclagem.
-                        </p>
+            <div className="flex bg-branco w-full max-w-4xl h-[25rem] flex-grow justify-center items-center shadow-lg rounded-lg mb-8">
+                {videoSelecionado ? (
+                    <div className="w-full h-full">
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src={`https://www.youtube.com/embed/${videoSelecionado.youtubeId}`} 
+                            title={videoSelecionado.titulo} 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowFullScreen
+                            className="rounded-lg"
+                        ></iframe>
                     </div>
-
-                    <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
-                        <div className="w-full h-[10rem] bg-[url('/video-thumbnail2.jpg')] bg-cover bg-center mb-4"></div>
-                        <h2 className="text-xl font-semibold">O que fazer com lixo orgânico?</h2>
-                        <p className="text-gray-700 text-sm mt-2">
-                            Saiba como destinar corretamente resíduos orgânicos e contribuir com a compostagem.
-                        </p>
+                ) : (
+                    <div 
+                        className="flex flex-col justify-center items-center cursor-pointer"
+                        onClick={() => {
+                            if (listaVideos.length > 0) {
+                                setVideoSelecionado(listaVideos[0]);
+                            }
+                        }}
+                        title="Clique para selecionar um vídeo"
+                    >
+                        <div 
+                            className="w-24 h-24 mb-4 rounded-full bg-[url('/play-button.png')] bg-cover bg-center"
+                        ></div>
+                        <span className="text-lg font-semibold">Clique para reproduzir um vídeo</span>
                     </div>
+                )}
+            </div>
 
-                    <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
-                        <div className="w-full h-[10rem] bg-[url('/video-thumbnail3.jpg')] bg-cover bg-center mb-4"></div>
-                        <h2 className="text-xl font-semibold">Reciclagem de eletrônicos</h2>
-                        <p className="text-gray-700 text-sm mt-2">
-                            Entenda como descartar eletrônicos e evitar contaminação com componentes perigosos.
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <span className="text-2xl font-semibold mb-4">
+                Veja mais vídeos
+            </span>
 
-            <footer className="bg-verde_escuro text-white p-8 flex justify-center">
-                <p>&copy; 2024 Reviva - Todos os direitos reservados</p>
-            </footer>
-        </main>
+            <div className="grid grid-cols-1 p-8 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+                {listaVideos.map(video => (
+                    <Video 
+                        key={video.youtubeId} 
+                        titulo={video.titulo} 
+                        descricao={video.descricao} 
+                        youtubeId={video.youtubeId}
+                        onSelect={() => setVideoSelecionado(video)} 
+                        isSelected={videoSelecionado?.youtubeId === video.youtubeId}
+                    />
+                ))}
+            </div>
+        </section>
     )
 }
