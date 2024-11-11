@@ -1,3 +1,5 @@
+import { FaPlay } from "react-icons/fa";
+
 export default function Videos() {
     return (
         <main className="text-branco flex flex-col bg-branco min-h-screen min-w-screen">
@@ -17,20 +19,26 @@ export default function Videos() {
                 </p>
 
                 <span className="text-xl font-semibold">
-                    COmo rebolar lentinho pros crias
+                    Vídeo de introdução
                 </span>
 
                 <div className="flex bg-branco w-1/2 h-[25rem] flex-grow justify-center items-center shadow-lg rounded-lg mb-8">
-                    <div className="flex w-[10rem] h-[10rem] rounded-full bg-[url('/play-button.png')] bg-cover bg-center cursor-pointer"></div>
+                    <div className="flex rounded-full cursor-pointer">
+                        <FaPlay size={80} />
+                    </div>
                 </div>
 
 
-                <span className="text-xl font-semibold">
+                <span className="text-3xl font-semibold">
                     Veja mais vídeos
                 </span>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
                     <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
-                        <div className="w-full h-[10rem] bg-[url('/video-thumbnail1.jpg')] bg-cover bg-center mb-4"></div>
+                        <div className="flex flex-grow items-center justify-center mb-4">
+                            <div className="flex rounded-full cursor-pointer">
+                                <FaPlay size={80} />
+                            </div>
+                        </div>
                         <h2 className="text-xl font-semibold">Como separar plástico e vidro</h2>
                         <p className="text-gray-700 text-sm mt-2">
                             Aprenda a diferença e a importância de separar esses materiais para a reciclagem.
@@ -38,15 +46,23 @@ export default function Videos() {
                     </div>
 
                     <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
-                        <div className="w-full h-[10rem] bg-[url('/video-thumbnail2.jpg')] bg-cover bg-center mb-4"></div>
-                        <h2 className="text-xl font-semibold">O que fazer com lixo orgânico?</h2>
+                        <div className="flex flex-grow items-center justify-center mb-4">
+                            <div className="flex rounded-full cursor-pointer">
+                                <FaPlay size={80} />
+                            </div>
+                        </div>
+                        <h2 className="text-xl font-semibold truncate">O que fazer com lixo orgânico?</h2>
                         <p className="text-gray-700 text-sm mt-2">
                             Saiba como destinar corretamente resíduos orgânicos e contribuir com a compostagem.
                         </p>
                     </div>
 
                     <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
-                        <div className="w-full h-[10rem] bg-[url('/video-thumbnail3.jpg')] bg-cover bg-center mb-4"></div>
+                        <div className="flex flex-grow items-center justify-center mb-4">
+                            <div className="flex rounded-full cursor-pointer">
+                                <FaPlay size={80} />
+                            </div>
+                        </div>
                         <h2 className="text-xl font-semibold">Reciclagem de eletrônicos</h2>
                         <p className="text-gray-700 text-sm mt-2">
                             Entenda como descartar eletrônicos e evitar contaminação com componentes perigosos.
