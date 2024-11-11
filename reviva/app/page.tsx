@@ -5,7 +5,7 @@ import Header from "./components/header";
 
 export default function Home() {
   const funcionalidades = [
-    { href: '/', nome: 'Rota do lixo', icone: '🗺' },
+    { href: '/mapa', nome: 'Rota do lixo', icone: '🗺' },
     { href: '/funcionalidade2', nome: 'Calendário de coleta', icone: '📅' },
     { href: '/funcionalidade3', nome: 'Controle de descarte', icone: '🚯' },
   ]
@@ -41,7 +41,7 @@ export default function Home() {
             <iframe
               width="100%"
               height="100%"
-              src={`https://www.youtube.com/embed/3AfaTM8fB_E`}
+              src={`https://www.youtube.com/embed/ITur0JNJZos`}
               title={'Vídeo mais recente'}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

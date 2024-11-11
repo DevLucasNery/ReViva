@@ -1,79 +1,65 @@
-import { FaPlay } from "react-icons/fa";
+import Footer from "../components/footer";
 
 export default function Videos() {
     return (
-        <main className="text-branco flex flex-col bg-branco min-h-screen min-w-screen">
-            <header className="flex p-8 text-2xl bold bg-verde_escuro">
-                <div>
-                    <span>Reviva</span>
-                </div>
-            </header>
-
-            <section className="flex flex-col bg-verde_claro text-black flex-grow p-8 justify-center items-center">
-                <h1 className="text-2xl font-semibold mb-6 text-center">
+        <main className="text-white flex flex-col bg-gray-50 min-h-screen">
+            <section className="flex flex-col bg-green-100 text-gray-800 flex-grow p-8 md:px-16 lg:px-24 justify-center items-center">
+                <h1 className="text-3xl font-semibold mb-4 text-center md:mb-6 text-verde_escuro">
                     Aprenda mais sobre como separar seus resíduos para o descarte
                 </h1>
-                <p className="text-lg mb-8 text-center">
+                <p className="text-lg mb-10 text-center max-w-2xl">
                     A reciclagem é fundamental para preservar o meio ambiente. Assista aos vídeos abaixo e descubra
                     as melhores práticas para separar seus resíduos corretamente!
                 </p>
 
-                <span className="text-xl font-semibold">
-                    Vídeo de introdução
-                </span>
+                <span className="text-3xl font-semibold mb-4 text-verde_escuro">Vídeo de introdução</span>
 
-                <div className="flex bg-branco w-1/2 h-[25rem] flex-grow justify-center items-center shadow-lg rounded-lg mb-8">
-                    <div className="flex rounded-full cursor-pointer">
-                        <FaPlay size={80} />
-                    </div>
+                <div className="flex bg-white w-full md:w-3/4 lg:w-1/2 h-[25rem] justify-center items-center shadow-xl rounded-lg mb-8 transition-all duration-300 hover:shadow-2xl">
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        src="https://www.youtube.com/embed/ITur0JNJZos"
+                        title="Vídeo de introdução"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="rounded-lg"
+                    ></iframe>
                 </div>
 
+                <span className="text-3xl font-semibold mt-4 mb-6 text-verde_escuro">Veja mais vídeos</span>
 
-                <span className="text-3xl font-semibold">
-                    Veja mais vídeos
-                </span>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
-                    <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
-                        <div className="flex flex-grow items-center justify-center mb-4">
-                            <div className="flex rounded-full cursor-pointer">
-                                <FaPlay size={80} />
-                            </div>
-                        </div>
-                        <h2 className="text-xl font-semibold">Como separar plástico e vidro</h2>
-                        <p className="text-gray-700 text-sm mt-2">
-                            Aprenda a diferença e a importância de separar esses materiais para a reciclagem.
-                        </p>
-                    </div>
+                    <iframe
+                        width="100%"
+                        height="calc(100% * 16 / 9)"
+                        src={`https://www.youtube.com/embed/p5eJczc03Vs`}
+                        title="Vídeo mais recente"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="flex flex-grow rounded-lg aspect-[9/16]"
+                    ></iframe>
 
-                    <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
-                        <div className="flex flex-grow items-center justify-center mb-4">
-                            <div className="flex rounded-full cursor-pointer">
-                                <FaPlay size={80} />
-                            </div>
-                        </div>
-                        <h2 className="text-xl font-semibold truncate">O que fazer com lixo orgânico?</h2>
-                        <p className="text-gray-700 text-sm mt-2">
-                            Saiba como destinar corretamente resíduos orgânicos e contribuir com a compostagem.
-                        </p>
-                    </div>
+                    <iframe
+                        width="100%"
+                        height="calc(100% * 16 / 9)"
+                        src={`https://www.youtube.com/embed/aKzNgqD5xoY`}
+                        title="Vídeo mais recente"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="flex flex-grow rounded-lg aspect-[9/16]"
+                    ></iframe>
 
-                    <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
-                        <div className="flex flex-grow items-center justify-center mb-4">
-                            <div className="flex rounded-full cursor-pointer">
-                                <FaPlay size={80} />
-                            </div>
-                        </div>
-                        <h2 className="text-xl font-semibold">Reciclagem de eletrônicos</h2>
-                        <p className="text-gray-700 text-sm mt-2">
-                            Entenda como descartar eletrônicos e evitar contaminação com componentes perigosos.
-                        </p>
-                    </div>
+                    <iframe
+                        width="100%"
+                        height="calc(100% * 16 / 9)"
+                        src={`https://www.youtube.com/embed/MmR6wY2oyJ4`}
+                        title="Vídeo mais recente"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="flex flex-grow rounded-lg aspect-[9/16]"
+                    ></iframe>
                 </div>
             </section>
-
-            <footer className="bg-verde_escuro text-white p-8 flex justify-center">
-                <p>&copy; 2024 Reviva - Todos os direitos reservados</p>
-            </footer>
         </main>
     )
 }
