@@ -6,8 +6,8 @@ import Header from "./components/header";
 export default function Home() {
   const funcionalidades = [
     { href: '/mapa', nome: 'Rota do lixo', icone: '🗺' },
-    { href: '/funcionalidade2', nome: 'Calendário de coleta', icone: '📅' },
-    { href: '/funcionalidade3', nome: 'Controle de descarte', icone: '🚯' },
+    { href: '/calendario', nome: 'Calendário de coleta', icone: '📅' },
+    { href: '/denuncia', nome: 'Denuncias', icone: '🚯' },
   ]
 
   return (
