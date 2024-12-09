@@ -44,10 +44,10 @@ export default function DenunciaPage() {
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <h1 style={{ color: "#065f46", textAlign: "center" }}>Denunciar</h1>
+        <h1 style={{ color: "#000", textAlign: "center" }}>Denunciar</h1>
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: "20px" }}>
-            <label style={{ display: "block", marginBottom: "5px", color: "#065f46" }}>
+            <label style={{ display: "block", marginBottom: "5px", color: "#000" }}>
               Local:
             </label>
             <input
@@ -62,12 +62,13 @@ export default function DenunciaPage() {
                 padding: "12px",
                 border: "1px solid #10b981",
                 borderRadius: "5px",
+                color: "#000", // Texto preto
               }}
             />
           </div>
 
           <div style={{ marginBottom: "20px" }}>
-            <label style={{ display: "block", marginBottom: "5px", color: "#065f46" }}>
+            <label style={{ display: "block", marginBottom: "5px", color: "#000" }}>
               Hora:
             </label>
             <input
@@ -81,12 +82,13 @@ export default function DenunciaPage() {
                 padding: "12px",
                 border: "1px solid #10b981",
                 borderRadius: "5px",
+                color: "#000", // Texto preto
               }}
             />
           </div>
 
           <div style={{ marginBottom: "20px" }}>
-            <label style={{ display: "block", marginBottom: "5px", color: "#065f46" }}>
+            <label style={{ display: "block", marginBottom: "5px", color: "#000" }}>
               Descrição:
             </label>
             <textarea
@@ -101,12 +103,13 @@ export default function DenunciaPage() {
                 padding: "12px",
                 border: "1px solid #10b981",
                 borderRadius: "5px",
+                color: "#000", // Texto preto
               }}
             ></textarea>
           </div>
 
           <div style={{ marginBottom: "20px" }}>
-            <label style={{ display: "block", marginBottom: "5px", color: "#065f46" }}>
+            <label style={{ display: "block", marginBottom: "5px", color: "#000" }}>
               Tipo de Denúncia:
             </label>
             <select
@@ -119,10 +122,11 @@ export default function DenunciaPage() {
                 padding: "12px",
                 border: "1px solid #10b981",
                 borderRadius: "5px",
+                color: "#000", // Texto preto
               }}
             >
-              <option value="fauna">Fauna</option>
-              <option value="flora">Flora</option>
+              <option value="fauna">Animais</option>
+              <option value="flora">Meio ambiente</option>
             </select>
           </div>
 

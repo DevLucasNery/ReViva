@@ -8,7 +8,7 @@ export default function Home() {
     { href: '/mapa', nome: 'Rota do lixo', icone: '🗺' },
     { href: '/calendario', nome: 'Pontos de Coleta', icone: '♻️' },
     { href: '/denuncia', nome: 'Denuncias', icone: '🚯' },
-    { href: '/beneficios', nome: 'FAQ e Bonus', icone: '🚯' },
+    { href: '/beneficios', nome: 'FAQ e Bonus', icone: '❓' },
   ]
 
   return (
