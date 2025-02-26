@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        verde_escuro:'#1E4808',
-        verde_claro: '#D1E8D3',
+        violeta:'#6842A8',
+        azul_claro: '#758CF2',
         branco:'#F2F2F2'
       },
     },
